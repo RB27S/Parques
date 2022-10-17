@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:isScrollContainer="true" >
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.05"
+            app:srcCompat="@drawable/appimground" />
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logo"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <EditText
+            android:id="@+id/etDescripcion"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:hint="Descripción"
+            app:layout_constraintTop_toBottomOf="@id/etNombre"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <EditText
+            android:id="@+id/etTelefono"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:hint="Teléfono"
+            android:inputType="phone"
+            app:layout_constraintTop_toBottomOf="@id/etDescripcion"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <EditText
+            android:id="@+id/etWeb"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:hint="Web"
+            app:layout_constraintTop_toBottomOf="@id/etTelefono"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/tvHoraApertura"
+            android:layout_width="185sp"
+            android:layout_height="wrap_content"
+            android:text="Hora de apertura"
+            app:layout_constraintTop_toBottomOf="@id/etWeb"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvHoraCierre"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tvHoraCierre"
+            android:layout_width="185sp"
+            android:layout_height="wrap_content"
+            android:text="Hora de apertura"
+            app:layout_constraintTop_toBottomOf="@id/etWeb"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvHoraApertura"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed" />
+
+        <Spinner
+            android:id="@+id/spinnerHoraApertura"
+            android:entries="@array/horas"
+            android:layout_width="185sp"
+            android:layout_height="50dp"
+            android:spinnerMode="dialog"
+            app:layout_constraintTop_toBottomOf="@id/tvHoraApertura"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/spinnerHoraCierre"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed" />
+
+        <Spinner
+            android:id="@+id/spinnerHoraCierre"
+            android:entries="@array/horas"
+            android:layout_width="185sp"
+            android:layout_height="50dp"
+            android:spinnerMode="dialog"
+            app:layout_constraintTop_toBottomOf="@id/tvHoraApertura"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/spinnerHoraApertura"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tvActividades"
+            android:layout_width="185sp"
+            android:layout_height="wrap_content"
+            android:text="Actividades"
+            app:layout_constraintTop_toBottomOf="@id/spinnerHoraApertura"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/spinnerHoraApertura"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.05"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <CheckBox
+            android:id="@+id/cbDeportes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deportes"
+            app:layout_constraintTop_toBottomOf="@id/tvActividades"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvActividades"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <CheckBox
+            android:id="@+id/cbParqueInfantil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parque Infantil"
+            app:layout_constraintTop_toBottomOf="@id/cbDeportes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cbDeportes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <CheckBox
+            android:id="@+id/cbRestaurante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restaurante"
+            app:layout_constraintTop_toBottomOf="@id/cbParqueInfantil"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cbParqueInfantil"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <CheckBox
+            android:id="@+id/cbZonaMascotas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zona de Mascotas"
+            app:layout_constraintTop_toBottomOf="@id/cbRestaurante"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cbRestaurante"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <Button
+            android:id="@+id/bGuardar"
+            android:layout_width="350sp"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            app:layout_constraintTop_toBottomOf="@id/cbZonaMascotas"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

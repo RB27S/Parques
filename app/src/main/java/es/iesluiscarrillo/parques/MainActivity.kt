@@ -13,6 +13,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.bGuardar.setOnClickListener {
+            val cd = CuadroDeDialogo()
+            cd.show(supportFragmentManager, "CuadroDialogo")
+
             Log.d(Tag, "Parque: ${binding.etNombre.text}")
             Log.d(Tag, "Descripción: ${binding.etDescripcion.text}")
             Log.d(Tag, "Teléfono: ${binding.etTelefono.text}")
